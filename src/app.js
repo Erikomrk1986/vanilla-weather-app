@@ -80,7 +80,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates){  ////// get Lon Lat
-  console.log(coordinates);
   let apiKey = "9656d85472f993f571de9d36d411cd1e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
@@ -117,7 +116,6 @@ function displayTemperature(response) {
   getForecast (response.data.coord); //////
 }
 
-
 function search(city) {
   let apiKey = "9656d85472f993f571de9d36d411cd1e";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -130,34 +128,34 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  // remove the ative class from the celsius link
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
+//function displayFahrenheitTemperature(event) {
+//  event.preventDefault();
+//  let temperatureElement = document.querySelector("#temperature");
+// remove the ative class from the celsius link
+//  celsiusLink.classList.remove("active");
+//  fahrenheitLink.classList.add("active");
+//  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+//  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+//}
 
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
+//function displayCelsiusTemperature(event) {
+//  event.preventDefault();
+//  celsiusLink.classList.add("active");
+//  fahrenheitLink.classList.remove("active");
+//  let temperatureElement = document.querySelector("#temperature");
+//  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+//}
 
-let celsiusTemperature = null;
+//let celsiusTemperature = null;
 // FORM 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 // FAHRENHEIT
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+//let fahrenheitLink = document.querySelector("#fahrenheit-link");
+//fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 // CELSIUS 
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
+//let celsiusLink = document.querySelector("#celsius-link");
+//celsiusLink.addEventListener("click", displayCelsiusTemperature);
 // SEARCH
 search("Bangkok");
