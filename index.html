@@ -16,10 +16,14 @@
   </head>
 
   <body>
+
+
+
     <div class="container">
       <div class="weather-app-wrapper">
        <div class="weather-app">
          <div class="overview"> 
+
            <form id="search-form" class="mb-3">
             <div class="row">
               <div class="col-9">
@@ -27,26 +31,23 @@
                   type ="search" 
                   placefolder="Type a city.." 
                   class="form-control" 
-                 id="city-input"
-                />  
+                 id="city-input" />  
               </div>
-            <div class="col-3">
+              <div class="col-3">
                 <input 
                  type ="submit"
                  value ="Search" 
-                 class="btn btn-primary w-100"
-                />
-            </div>
-            </div>
+                 class="btn btn-primary w-100"  />
+            </div> //col-3
+            </div> //row
           </form>
 
         
         <h1 id="city"></h1>    
         <ul>
             <li>Last updated: <span id="date"></span></li>
-            <li id="description"></li>       
-          
-          </ul>
+            <li id="description"></li>                 
+        </ul>
          </div>
         <div class="row">
          
@@ -74,21 +75,20 @@
         
         </div>
         </div>
-        <div class = "weather-forecast" id = "forecast">
-        
+        <div class = "weather-forecast" id = "forecast"> 
         </div>
            
-    </div> 
-    <small>
+    </div> //weather-app
+    
+      </div>  // weather-app-wrapper
+      <small>
       <a 
          href="https://github.com/Erikomrk1986/vanilla-weather-app"
          target="_blank"
-         >Open-source code</a
-      > 
-      by Me Myself
+         >Open-source code</a> 
+      by Me, Myself & I...
     </small>
-      </div> 
-    </div>
+    </div> // container 
     <script src="src/app.js"></script>
   </body>
 </html>

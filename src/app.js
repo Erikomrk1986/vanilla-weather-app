@@ -1,13 +1,13 @@
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
-   if (hours < 10) {
-    hours = `0${hours}`;
-   }
+   //if (hours < 10) {
+   // hours = `0${hours}`;
+   //}
    let minutes = date.getMinutes();
-   if (minutes < 10) {
-    minutes = `0${minutes}`;
-   }
+   //if (minutes < 10) {
+   // minutes = `0${minutes}`;
+   //}
 
   let days = [
     "Sunday",
@@ -43,7 +43,6 @@ function formatDay(timestamp) {
   return days[day];
 }
 
-
 // Display daily forecast 
 function displayForecast(response) {
   let forecast = response.data.daily;
@@ -66,7 +65,7 @@ function displayForecast(response) {
         />
         <div class = "weather-forecast-temperatures">
           <span class = "weather-forecast-temperature-max"> ${Math.round(forecastDay.temp.max)}° </
-          span>
+          span> /
           <span class = "weather-forecast-temperature-min"> ${Math.round(forecastDay.temp.min)}° </
           span>              
         </div>              
@@ -74,9 +73,9 @@ function displayForecast(response) {
   `; 
     }
   })
- 
   forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;       
+  forecastElement.innerHTML = forecastHTML;
+  
 }
 
 function getForecast(coordinates){  ////// get Lon Lat
@@ -151,6 +150,7 @@ function handleSubmit(event) {
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
+search("Bangkok");
 // FAHRENHEIT
 //let fahrenheitLink = document.querySelector("#fahrenheit-link");
 //fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
@@ -158,4 +158,4 @@ form.addEventListener("submit", handleSubmit);
 //let celsiusLink = document.querySelector("#celsius-link");
 //celsiusLink.addEventListener("click", displayCelsiusTemperature);
 // SEARCH
-search("Bangkok");
+
